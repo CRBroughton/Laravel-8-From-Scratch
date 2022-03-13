@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Route;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,13 +27,14 @@ Route::get('/', function () {
             $document->title, 
             $document->excerpt,
             $document->date,
-            $document->body()
+            $document->body(),
+            $document->slug
         );
     }
 
 
     return view('posts', [
-        'posts' => Post::all(),
+        'posts' => $posts
     ]);
 });
 
