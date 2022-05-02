@@ -17,7 +17,7 @@
             <div x-data="{ show: false }">
                 <button class="py-2 pl-3 pr-9 text-sm font-semibold" @click="show = !show">Categories</button>
 
-                <div class="py-2 lg:absolute" x-show="show">
+                <div class="py-2 lg:absolute bg-gray-100 w-full mt-2 rounded-xl" x-show="show">
                     <a href="" class="block text-left px-3 text-sm leading-5 hover:bg-gray-300 focus:bg-gray-300">One</a>
                     <a href="" class="block text-left px-3 text-sm leading-5">Two</a>
                     <a href="" class="block text-left px-3 text-sm leading-5">Three</a>
