@@ -28,10 +28,16 @@
                         </svg>
                     </button>
                 </x-slot>
-                <a href="/" class="block text-left px-3 text-sm leading-5 hover:bg-gray-300 focus:bg-gray-300">All</a>
+                <x-dropdown-item href="/">All</x-dropdown-item>
                 @foreach ($categories as $category)
-                    <a href="/categories/{{ $category->slug }}"
-                        class="block text-left px-3 text-sm leading-5 hover:bg-gray-300 focus:bg-gray-300 {{ isset($currentCategory) && $currentCategory->is($category) ? 'bg-gray-300 text-white' : '' }}">{{ ucwords($category->name) }}</a>
+                    <x-dropdown-item 
+                        href="/categories/{{ $category->slug }}"
+                        :active="isset($currentCategory) && $currentCategory->is($category)">
+                        {{ ucwords($category->name) }}
+                    </x-dropdown-item>
+
+                    {{-- <a href="/categories/{{ $category->slug }}"
+                        class="block text-left px-3 text-sm leading-5 hover:bg-gray-300 focus:bg-gray-300 {{ isset($currentCategory) && $currentCategory->is($category) ? 'bg-gray-300 text-white' : '' }}">{{ ucwords($category->name) }}</a> --}}
                 @endforeach
             </x-dropdown>
         </div>
