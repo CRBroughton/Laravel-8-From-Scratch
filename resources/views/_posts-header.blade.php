@@ -35,9 +35,6 @@
                         :active="isset($currentCategory) && $currentCategory->is($category)">
                         {{ ucwords($category->name) }}
                     </x-dropdown-item>
-
-                    {{-- <a href="/categories/{{ $category->slug }}"
-                        class="block text-left px-3 text-sm leading-5 hover:bg-gray-300 focus:bg-gray-300 {{ isset($currentCategory) && $currentCategory->is($category) ? 'bg-gray-300 text-white' : '' }}">{{ ucwords($category->name) }}</a> --}}
                 @endforeach
             </x-dropdown>
         </div>
